@@ -5,6 +5,9 @@ export const sectionBottomClass = 'pb-16 sm:pb-24'
 
 export const sectionXClass = 'px-6 sm:px-8'
 
+/** Matches navbar inner width — max-w-7xl + horizontal padding */
+export const pageShellClass = 'mx-auto w-full max-w-7xl px-6 sm:px-10 lg:px-12'
+
 export const sectionScrollClass = 'scroll-mt-24 overflow-x-hidden'
 
 /** Standard section: scroll anchor + vertical spacing */
@@ -19,8 +22,8 @@ export const heroSectionClass = `relative overflow-hidden ${sectionXClass} ${sec
 /** Slightly tighter than inter-section gap (last section bottom + this margin) */
 export const footerClass = 'mt-10 sm:mt-16'
 
-/** Footer inner container padding */
-export const footerContainerClass = `mx-auto max-w-6xl ${sectionXClass} py-12 sm:py-16`
+/** Footer inner container — same horizontal shell as navbar */
+export const footerContainerClass = `${pageShellClass} py-12 sm:py-16`
 
 /** Space above the footer divider (between main columns and rule) */
 export const footerDividerClass = 'mb-2 mt-12 border-t border-zinc-800 sm:mb-3 sm:mt-14'

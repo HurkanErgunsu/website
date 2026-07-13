@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { themeToCssVars } from '../utils/theme'
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
@@ -9,10 +8,6 @@ import ContactForm from '../components/ContactForm'
 import Footer from '../components/Footer'
 
 export default function AppLanding({ currentApp }) {
-  useEffect(() => {
-    document.title = currentApp.name
-  }, [currentApp.name])
-
   return (
     <div
       className="min-h-svh"

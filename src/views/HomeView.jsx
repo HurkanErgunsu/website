@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { APPS_DATA, HOME_THEME, PORTFOLIO } from '../config/appConfig'
 import { fadeInUp, staggerContainer, viewportOnce } from '../utils/motion'
@@ -10,10 +9,6 @@ import AppCard from '../components/home/AppCard'
 
 export default function HomeView({ onSelectApp }) {
   const apps = Object.entries(APPS_DATA)
-
-  useEffect(() => {
-    document.title = PORTFOLIO.name
-  }, [])
 
   return (
     <div

@@ -3,12 +3,13 @@
 import bubbleLevelLogo from '../assets/bubble-level.png';
 import pdfConverterLogo from '../assets/pdf-converter-logo.png';
 import plannerIcon from '../assets/planner-icon.png';
+import portfolioLogo from '../assets/portfolio-logo.svg';
 
 export const PORTFOLIO = {
   name: 'SH Production',
   tagline: 'Indie mobile apps, crafted with care.',
-  logo: null,
-  logoAlt: 'Portfolio logo',
+  logo: portfolioLogo,
+  logoAlt: 'SH Production logo',
   links: {
     tiktok: null,
     instagram: null,
@@ -68,7 +69,6 @@ export const APPS_DATA = {
       primaryDark: '#22C55E',
       background: '#F2F2F7',
       surface: '#FFFFFF',
-      logoBg: '#FFFFFF',
       text: '#1A1D26',
       textMuted: '#6B7280',
       footerBg: '#0F1218',
@@ -176,7 +176,6 @@ export const APPS_DATA = {
       primaryDark: '#911517',
       background: '#F2F2F7',
       surface: '#FFFFFF',
-      logoBg: '#FFFFFF',
       text: '#1A1C1E',
       textMuted: '#6C727A',
       footerBg: '#0F1218',
@@ -297,7 +296,6 @@ export const APPS_DATA = {
       primaryDark: '#6366f1',
       background: '#F2F2F7',
       surface: '#FFFFFF',
-      logoBg: '#FFFFFF',
       text: '#111827',
       textMuted: '#6B7280',
       footerBg: '#0B0D12',

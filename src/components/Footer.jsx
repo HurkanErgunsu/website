@@ -102,12 +102,16 @@ export default function Footer({ currentApp }) {
         >
           <div className="max-w-sm">
             <div className="flex items-center gap-3">
-              <div
-                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl"
-                style={{ backgroundColor: currentApp.theme.logoBg ?? currentApp.theme.surface }}
-              >
-                <AppLogo currentApp={currentApp} size="md" className="h-9 w-9 rounded-lg shadow-none" />
-              </div>
+              {currentApp.theme.logoBg ? (
+                <div
+                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl"
+                  style={{ backgroundColor: currentApp.theme.logoBg }}
+                >
+                  <AppLogo currentApp={currentApp} size="md" className="h-9 w-9 rounded-lg shadow-none" />
+                </div>
+              ) : (
+                <AppLogo currentApp={currentApp} size="md" className="h-11 w-11 rounded-xl shadow-none" />
+              )}
               <span className="text-lg font-semibold tracking-tight text-white sm:text-xl">
                 {currentApp.name}
               </span>

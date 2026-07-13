@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { pageShellClass } from '../utils/layout'
 import AppLogo from './AppLogo'
 import { APP_NAV_SECTIONS, scrollToSection } from '../utils/scroll'
 
@@ -16,7 +17,7 @@ export default function Navbar({ currentApp }) {
       transition={{ duration: 0.5 }}
       className="sticky top-0 z-50 w-full border-b border-white/50 bg-white/55 shadow-sm shadow-black/[0.04] backdrop-blur-2xl backdrop-saturate-200 supports-[backdrop-filter]:bg-white/45"
     >
-      <div className="mx-auto grid h-[80px] max-w-7xl grid-cols-[1fr_auto_1fr] items-center gap-4 px-6 sm:px-10 lg:px-12">
+      <div className={`${pageShellClass} grid h-[80px] grid-cols-[1fr_auto_1fr] items-center gap-4`}>
         <a
           href="#"
           onClick={(e) => {

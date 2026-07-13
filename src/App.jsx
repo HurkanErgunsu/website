@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { APPS_DATA } from './config/appConfig'
+import { APPS_DATA, PORTFOLIO } from './config/appConfig'
 import HomeView from './views/HomeView'
 import AppLanding from './views/AppLanding'
 
@@ -34,6 +34,15 @@ export default function App() {
     window.addEventListener('popstate', onPopState)
     return () => window.removeEventListener('popstate', onPopState)
   }, [])
+
+  useEffect(() => {
+    if (activeAppId) {
+      document.title = APPS_DATA[activeAppId].name
+      return
+    }
+
+    document.title = PORTFOLIO.name
+  }, [activeAppId])
 
   return (
     <AnimatePresence mode="wait">

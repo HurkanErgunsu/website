@@ -19,7 +19,7 @@ export default function AppLogo({ currentApp, size = 'md', featured = false, cla
       <img
         src={currentApp.logo}
         alt={currentApp.logoAlt}
-        className={`${sizeStyles} object-cover ${featuredStyles} ${className}`}
+        className={`${sizeStyles} object-contain ${featuredStyles} ${className}`}
       />
     )
   }
