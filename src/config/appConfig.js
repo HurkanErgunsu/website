@@ -3,35 +3,172 @@
 import bubbleLevelLogo from '../assets/bubble-level.png';
 import pdfConverterLogo from '../assets/pdf-converter-logo.png';
 import plannerIcon from '../assets/planner-icon.png';
+import portraitPhoto from '../assets/portrait.jpg';
 import portfolioLogo from '../assets/portfolio-logo.svg';
 
 export const PORTFOLIO = {
-  name: 'SH Production',
-  tagline: 'Indie mobile apps, crafted with care.',
+  name: 'Turan Hürkan Ergünsu',
+  shortName: 'THE',
+  role: 'Technical Computer Science Student | Web & Mobile App Developer',
+  tagline:
+    'Technical Computer Science student at Leibniz University Hannover, building software and shipping my own apps. I focus on mobile and cross-platform development with clean architecture. I’m driven by user-centered, performant, and scalable products.',
   logo: portfolioLogo,
-  logoAlt: 'SH Production logo',
+  logoAlt: 'Turan Hürkan Ergünsu',
+  portrait: portraitPhoto,
+  portraitAlt: 'Portrait of Turan Hürkan Ergünsu',
+  cvUrl: '/cv/turan-hurkan-ergunsu-cv.pdf',
+  location: 'Hannover, Germany',
+  email: 'hurkan.ergunsu@gmail.com',
+  phone: '+49 176 21822471',
   links: {
+    linkedin: 'https://de.linkedin.com/in/turan-h%C3%BCrkan-erg%C3%BCnsu-8b293a252',
+    github: 'https://github.com/HurkanErgunsu',
+    instagram: 'https://www.instagram.com/hurkanergunsu/',
     tiktok: null,
-    instagram: null,
     facebook: null,
+  },
+  experience: [
+    {
+      id: 'dunkin',
+      role: 'Team Member — Barista / Sales',
+      company: "Dunkin' Donuts",
+      period: '01/2025 — Present',
+      city: 'Oberhausen',
+      country: 'Germany',
+      employmentType: 'Part-time',
+      description:
+        'Side job focused on drinks, customer service, sales, and store operations.',
+      details: [
+        'Prepare coffee and other drinks, and support guests at the counter.',
+        'Help with sales and keep the warehouse and stock areas organized.',
+        'Work in a fast-paced team environment with a focus on reliable service.',
+      ],
+    },
+    {
+      id: 'drdfleet-toloka',
+      role: 'Student Trainee — Software Development',
+      company: 'DRDFleet & Toloka AI',
+      period: '10/2023 — 07/2024',
+      city: 'Istanbul',
+      country: 'Turkey',
+      employmentType: 'Part-time',
+      description:
+        'Werkstudent role focused on software development, data quality, and reporting solutions.',
+      details: [
+        'Worked on in-depth data analysis with a strong focus on data quality.',
+        'Contributed to the design of analysis and reporting solutions.',
+        'DRD Fleet Leasing — Built and modernized responsive pages, handled API/database data flows, and helped deploy the project live (HTML, CSS, Bootstrap, JavaScript, jQuery, Vue, PHP, SQL, MySQL).',
+        'Toloka AI — Contributed with Python to prompt development and improving AI responses to user inputs.',
+      ],
+    },
+  ],
+  education: [
+    {
+      id: 'luh-ti',
+      title: 'B.Sc. Technical Computer Science',
+      place: 'Leibniz University Hannover',
+      period: 'Present',
+      detail:
+        'Currently studying Technische Informatik at LUH. Focusing on the foundations of computer science alongside practical software development.',
+    },
+    {
+      id: 'atasehir',
+      title: 'Anadolu High School Diploma',
+      place: 'Ataşehir Anadolu Lisesi',
+      period: '08/2017 — 07/2021',
+      detail:
+        'Completed Anadolu high school with a general university entrance qualification. Graduated with a diploma grade of 80.65 / 100.',
+    },
+  ],
+  furtherEducation: [
+    {
+      id: 'telc-c1',
+      title: 'telc Deutsch C1 Hochschule',
+      place: 'Official language certificate',
+      period: '01/2026',
+      detail:
+        'Earned the telc Deutsch C1 Hochschule certificate for academic German. Passed with the grade Sufficient (Ausreichend).',
+    },
+    {
+      id: 'american-culture',
+      title: 'English courses (B1 — C1)',
+      place: 'American Culture Language School',
+      period: '2017 — 2018',
+      detail:
+        'Completed structured English courses from B1 to C1. Built a strong base for later academic and technical communication.',
+    },
+  ],
+  skills: {
+    languages: [
+      { name: 'Turkish', level: 'Native' },
+      { name: 'English', level: 'B1/B2' },
+      { name: 'German', level: 'C1' },
+    ],
+    groups: [
+      {
+        title: 'Frontend',
+        items: ['JavaScript (ES6+)', 'React', 'React Native', 'HTML5', 'CSS3'],
+      },
+      {
+        title: 'Backend & DB',
+        items: ['Node.js', 'Python', 'PHP', 'SQL (MySQL, PostgreSQL)'],
+      },
+      {
+        title: 'Cloud & BaaS',
+        items: ['AWS (EC2, S3, CDN)', 'Supabase', 'Firebase'],
+      },
+      {
+        title: 'Tools',
+        items: ['Docker', 'Git', 'MS Office'],
+      },
+    ],
   },
 }
 
 /** Home navbar bookmarks — add { id, label } when a new category section goes live */
 export const HOME_NAV_SECTIONS = [
-  { id: 'apps', label: 'Mobile Apps' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'skills', label: 'Skills' },
+  { id: 'education', label: 'Education' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'contact', label: 'Contact' },
 ]
 
-export const HOME_THEME = {
-  background: '#FFFFFF',
-  surface: '#ffffff',
-  text: '#18181b',
-  textMuted: '#71717a',
-  border: '#e4e4e7',
-  footerBg: '#18181b',
-  footerText: '#a1a1aa',
-  accent: '#18181b',
+export const HOME_THEMES = {
+  dark: {
+    background: '#0b0f14',
+    surface: 'rgba(255,255,255,0.06)',
+    text: '#f4f7fb',
+    textMuted: '#9aa4b2',
+    border: 'rgba(255,255,255,0.12)',
+    footerBg: '#070a0e',
+    footerText: '#8b95a5',
+    accent: '#3b82f6',
+    accentHover: '#60a5fa',
+    navBg: 'rgba(11, 15, 20, 0.42)',
+    navBorder: 'rgba(255,255,255,0.12)',
+    chipBg: 'rgba(255,255,255,0.05)',
+    chipBorder: 'rgba(255,255,255,0.15)',
+  },
+  light: {
+    background: '#f4f6f9',
+    surface: 'rgba(255,255,255,0.72)',
+    text: '#0f172a',
+    textMuted: '#64748b',
+    border: 'rgba(15,23,42,0.1)',
+    footerBg: '#e8edf4',
+    footerText: '#64748b',
+    accent: '#2563eb',
+    accentHover: '#1d4ed8',
+    navBg: 'rgba(255, 255, 255, 0.48)',
+    navBorder: 'rgba(15,23,42,0.1)',
+    chipBg: 'rgba(15,23,42,0.04)',
+    chipBorder: 'rgba(15,23,42,0.1)',
+  },
 }
+
+/** @deprecated Prefer HOME_THEMES via usePortfolioTheme() */
+export const HOME_THEME = HOME_THEMES.dark
 
 export const DEFAULT_APP_ID = 'bubble-level'
 
@@ -42,7 +179,7 @@ export const APPS_DATA = {
     shortName: 'Bubble Level',
     slogan: '4 leveling modes, real-time precision & haptic feedback — 100% offline.',
     hero: {
-      badge: 'Precise Bubble Level is now on the App Store!',
+      badge: 'Precise Bubble Level is now on iOS & Android!',
       headline: [
         [
           { text: 'Real-time ', accent: true },
@@ -55,10 +192,10 @@ export const APPS_DATA = {
       description:
         'Four smart leveling modes, calibration, and haptic feedback when you hit level. Accelerometer and gyroscope fusion — no account, no internet, just accurate results anywhere.',
     },
-    trustLine: '★ 4.8 Rating on App Store • 100% Secure & Offline',
+    trustLine: '★ 4.8 Rating on App Store • Now on Google Play • 100% Secure & Offline',
     visualsDescription:
       'Swipe through real app screens — precision leveling, calibration, and every mode in a polished, offline-first experience.',
-    stores: { ios: true, android: false },
+    stores: { ios: true, android: true },
     footerDescription:
       'Four smart leveling modes with real-time precision and haptic feedback — fully offline, no account required.',
     logo: bubbleLevelLogo,

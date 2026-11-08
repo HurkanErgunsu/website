@@ -64,7 +64,7 @@ export default function Hero({ currentApp }) {
 
         <motion.p
           variants={fadeInUp}
-          className={`mt-8 max-w-[680px] ${subtitleTextClass}`}
+          className={`mt-5 max-w-[680px] ${subtitleTextClass}`}
           style={{ color: theme.text }}
         >
           {hero?.description ?? currentApp.slogan}

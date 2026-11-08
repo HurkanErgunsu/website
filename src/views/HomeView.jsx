@@ -1,47 +1,65 @@
-import { motion } from 'framer-motion'
-import { APPS_DATA, HOME_THEME, PORTFOLIO } from '../config/appConfig'
-import { fadeInUp, staggerContainer, viewportOnce } from '../utils/motion'
-import { sectionClass } from '../utils/layout'
-import { sectionTitleClass, subtitleTextClass } from '../utils/typography'
+import { PortfolioThemeProvider, usePortfolioTheme } from '../context/PortfolioThemeContext'
 import HomeNavbar from '../components/home/HomeNavbar'
 import HomeFooter from '../components/home/HomeFooter'
-import AppCard from '../components/home/AppCard'
+import PortfolioHero from '../components/home/PortfolioHero'
+import ExperienceSection from '../components/home/ExperienceSection'
+import SkillsSection from '../components/home/SkillsSection'
+import EducationSection from '../components/home/EducationSection'
+import ProjectsSection from '../components/home/ProjectsSection'
 
-export default function HomeView({ onSelectApp }) {
-  const apps = Object.entries(APPS_DATA)
+function HomeContent({ onSelectApp }) {
+  const { mode, theme } = usePortfolioTheme()
+
+  const cssVars =
+    mode === 'dark'
+      ? {
+          '--home-glass-bg': 'rgba(255, 255, 255, 0.06)',
+          '--home-glass-border': 'rgba(255, 255, 255, 0.12)',
+          '--home-glass-hover': 'rgba(255, 255, 255, 0.14)',
+          '--home-glass-border-hover': 'rgba(255, 255, 255, 0.28)',
+          '--home-glass-shadow': '0 18px 50px -28px rgba(0, 0, 0, 0.65)',
+          '--home-grid-line': 'rgba(255, 255, 255, 0.03)',
+          '--home-text': theme.text,
+        }
+      : {
+          '--home-glass-bg': 'rgba(255, 255, 255, 0.72)',
+          '--home-glass-border': 'rgba(15, 23, 42, 0.1)',
+          '--home-glass-hover': 'rgba(255, 255, 255, 0.92)',
+          '--home-glass-border-hover': 'rgba(15, 23, 42, 0.16)',
+          '--home-glass-shadow': '0 18px 50px -28px rgba(15, 23, 42, 0.18)',
+          '--home-grid-line': 'rgba(15, 23, 42, 0.05)',
+          '--home-text': theme.text,
+        }
 
   return (
     <div
-      className="min-h-svh"
-      style={{ backgroundColor: HOME_THEME.background, color: HOME_THEME.text }}
+      className="min-h-svh transition-colors duration-300"
+      data-theme={mode}
+      style={{
+        ...cssVars,
+        backgroundColor: theme.background,
+        color: theme.text,
+      }}
     >
       <HomeNavbar />
 
       <main>
-        <section id="apps" className={sectionClass}>
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            animate="visible"
-            className="mx-auto max-w-5xl min-w-0 px-6 sm:px-8"
-          >
-            <motion.div variants={fadeInUp} className="mb-8 text-center">
-              <h1 className={`${sectionTitleClass} text-zinc-900`}>Mobile Apps</h1>
-              <p className={`mt-3 ${subtitleTextClass}`} style={{ color: HOME_THEME.textMuted }}>
-                {PORTFOLIO.tagline}
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
-              {apps.map(([key, app]) => (
-                <AppCard key={key} appKey={key} app={app} onSelect={onSelectApp} />
-              ))}
-            </div>
-          </motion.div>
-        </section>
+        <PortfolioHero />
+        <ExperienceSection />
+        <SkillsSection />
+        <EducationSection />
+        <ProjectsSection onSelectApp={onSelectApp} />
       </main>
 
-      <HomeFooter onSelectApp={onSelectApp} />
+      <HomeFooter />
     </div>
+  )
+}
+
+export default function HomeView({ onSelectApp }) {
+  return (
+    <PortfolioThemeProvider>
+      <HomeContent onSelectApp={onSelectApp} />
+    </PortfolioThemeProvider>
   )
 }
